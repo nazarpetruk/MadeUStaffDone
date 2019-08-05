@@ -56,9 +56,9 @@
 		442390DC22F86CE20074554E /* MadeUStaffDone */ = {
 			isa = PBXGroup;
 			children = (
-				445BE08322F88D07003CD764 /* Controllers */,
+				445BE08122F88CE9003CD764 /* Model */,
 				445BE08222F88CFF003CD764 /* View */,
-				445BE08122F88CE9003CD764 /* Data Model */,
+				445BE08322F88D07003CD764 /* Controllers */,
 				442390DD22F86CE20074554E /* AppDelegate.swift */,
 				442390E722F86CE30074554E /* Assets.xcassets */,
 				442390E922F86CE30074554E /* LaunchScreen.storyboard */,
@@ -67,12 +67,12 @@
 			path = MadeUStaffDone;
 			sourceTree = "<group>";
 		};
-		445BE08122F88CE9003CD764 /* Data Model */ = {
+		445BE08122F88CE9003CD764 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				442390E422F86CE20074554E /* MadeUStaffDone.xcdatamodeld */,
 			);
-			path = "Data Model";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		445BE08222F88CFF003CD764 /* View */ = {

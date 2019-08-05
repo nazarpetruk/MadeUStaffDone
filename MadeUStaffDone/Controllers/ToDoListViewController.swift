@@ -17,6 +17,7 @@ class ToDoListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
 
     }
     //MARK: Table view data source methods
@@ -54,7 +55,7 @@ class ToDoListViewController: UITableViewController {
             newItem.title = textField.text!
             newItem.done = false
             self.itemArray.append(newItem)
-            self.saveItem()
+            self.saveItems()
         }
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Name new Item"
@@ -66,7 +67,7 @@ class ToDoListViewController: UITableViewController {
     
     
     
-    func saveItem(){
+    func saveItems(){
         do{
            try context.save()
         }catch{
@@ -75,6 +76,15 @@ class ToDoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    func loadItems(){
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do{
+            itemArray = try context.fetch(request)
+        }catch{
+            print("Error reading Data \(error)")
+        }
+        
+    }
     
 }
 
