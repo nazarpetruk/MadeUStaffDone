@@ -56,15 +56,39 @@
 		442390DC22F86CE20074554E /* MadeUStaffDone */ = {
 			isa = PBXGroup;
 			children = (
+				445BE08322F88D07003CD764 /* Controllers */,
+				445BE08222F88CFF003CD764 /* View */,
+				445BE08122F88CE9003CD764 /* Data Model */,
 				442390DD22F86CE20074554E /* AppDelegate.swift */,
-				442390DF22F86CE20074554E /* ToDoListViewController.swift */,
-				442390E122F86CE20074554E /* Main.storyboard */,
 				442390E722F86CE30074554E /* Assets.xcassets */,
 				442390E922F86CE30074554E /* LaunchScreen.storyboard */,
 				442390EC22F86CE30074554E /* Info.plist */,
-				442390E422F86CE20074554E /* MadeUStaffDone.xcdatamodeld */,
 			);
 			path = MadeUStaffDone;
+			sourceTree = "<group>";
+		};
+		445BE08122F88CE9003CD764 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				442390E422F86CE20074554E /* MadeUStaffDone.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		445BE08222F88CFF003CD764 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				442390E122F86CE20074554E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		445BE08322F88D07003CD764 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				442390DF22F86CE20074554E /* ToDoListViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
