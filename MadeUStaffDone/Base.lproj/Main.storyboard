@@ -37,6 +37,9 @@
                     <navigationItem key="navigationItem" title="MUSD" id="XiE-q6-Qt9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TE0-qU-Cdz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="newItemBtnPressed:" destination="pEA-3a-lZy" id="AM3-Qf-eTF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
