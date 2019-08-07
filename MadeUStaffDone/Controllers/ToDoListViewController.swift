@@ -19,7 +19,6 @@ class ToDoListViewController: SwipeViewController {
     }
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80.0
@@ -47,7 +46,7 @@ class ToDoListViewController: SwipeViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-    //Mark: Add new element func. using alert and text field
+    //Mark: Alert + new item creation
     
     @IBAction func newItemBtnPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -68,9 +67,8 @@ class ToDoListViewController: SwipeViewController {
         alert.addAction(action)
         present(alert,animated: true,completion: nil)
     }
-    
-    
-    
+
+    //MARK: CoreData manipulation Functions
     func saveItems(){
         do{
            try context.save()

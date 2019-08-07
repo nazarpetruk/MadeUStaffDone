@@ -22,7 +22,7 @@ class CategoryViewController: SwipeViewController {
         
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table view data
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryArray.count
     }
@@ -32,6 +32,7 @@ class CategoryViewController: SwipeViewController {
         let categoryItem = categoryArray[indexPath.row]
         cell.textLabel?.text = categoryItem.name
         return cell
+        
     }
     //MARK: TableView Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -41,18 +42,20 @@ class CategoryViewController: SwipeViewController {
         let destinationView = segue.destination as! ToDoListViewController
         if let indexPath = tableView.indexPathForSelectedRow{
             destinationView.selectedCategory = categoryArray[indexPath.row]
-     }
+       }
+        
     }
-    //MARK: new category item creation
+    //MARK: Alert + new category item creation
     @IBAction func addBtnPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         let alert = UIAlertController(title: "Create new category", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add", style: .default) {(action) in
             let newCategory = Category(context: self.context)
             newCategory.name = textField.text!
             self.categoryArray.append(newCategory)
             self.saveCategory()
         }
+        
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "New Category"
             textField = alertTextField
@@ -69,6 +72,7 @@ class CategoryViewController: SwipeViewController {
         }
         self.tableView.reloadData()
     }
+    
     func loadCategory(){
         let request : NSFetchRequest<Category> = Category.fetchRequest()
         do{
@@ -77,6 +81,7 @@ class CategoryViewController: SwipeViewController {
             print("Error with reading Data \(error)")
         }
     }
+    
     //Deletion from superClass
     override func updateModel(indexPath: IndexPath) {
         context.delete(categoryArray[indexPath.row])
