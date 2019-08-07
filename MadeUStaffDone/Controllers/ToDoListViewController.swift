@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ToDoListViewController: UITableViewController {
+class ToDoListViewController: SwipeViewController {
     
     var itemArray = [Item]()
     var selectedCategory : Category? {
@@ -22,7 +22,7 @@ class ToDoListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = 80.0
 
     }
     //MARK: Table view data source methods
@@ -31,12 +31,10 @@ class ToDoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         let item = itemArray[indexPath.row]
-        
         cell.textLabel?.text = item.title
-        
         cell.accessoryType = item.done ? .checkmark : .none
         
         return cell
@@ -92,6 +90,11 @@ class ToDoListViewController: UITableViewController {
             print("Error reading Data \(error)")
         }
         
+    }
+    override func updateModel(indexPath: IndexPath) {
+        context.delete(itemArray[indexPath.row])
+        itemArray.remove(at: indexPath.row)
+        saveItems()
     }
     
 }

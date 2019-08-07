@@ -15,6 +15,7 @@
 		442390E822F86CE30074554E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442390E722F86CE30074554E /* Assets.xcassets */; };
 		442390EB22F86CE30074554E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442390E922F86CE30074554E /* LaunchScreen.storyboard */; };
 		4425F23222FA106C002BC182 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425F23122FA106C002BC182 /* delete.png */; };
+		4425F23422FA1CF9002BC182 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425F23322FA1CF9002BC182 /* SwipeViewController.swift */; };
 		445BE08722F8AF9D003CD764 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BE08622F8AF9D003CD764 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		442390EA22F86CE30074554E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442390EC22F86CE30074554E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4425F23122FA106C002BC182 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = SOURCE_ROOT; };
+		4425F23322FA1CF9002BC182 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		445BE08622F8AF9D003CD764 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		86D4C7DAB20BE333F3E29FE3 /* libPods-MadeUStaffDone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MadeUStaffDone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3D74161ED5C53A88AAE163 /* Pods-MadeUStaffDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadeUStaffDone.release.xcconfig"; path = "Target Support Files/Pods-MadeUStaffDone/Pods-MadeUStaffDone.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				445BE08622F8AF9D003CD764 /* CategoryViewController.swift */,
 				442390DF22F86CE20074554E /* ToDoListViewController.swift */,
+				4425F23322FA1CF9002BC182 /* SwipeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4425F23422FA1CF9002BC182 /* SwipeViewController.swift in Sources */,
 				445BE08722F8AF9D003CD764 /* CategoryViewController.swift in Sources */,
 				442390E622F86CE20074554E /* MadeUStaffDone.xcdatamodeld in Sources */,
 				442390E022F86CE20074554E /* ToDoListViewController.swift in Sources */,

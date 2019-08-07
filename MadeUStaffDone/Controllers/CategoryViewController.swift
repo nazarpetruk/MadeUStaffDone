@@ -8,9 +8,9 @@
 
 import UIKit
 import CoreData
-import SwipeCellKit
 
-class CategoryViewController: UITableViewController {
+
+class CategoryViewController: SwipeViewController {
     //Global variables
     var categoryArray = [Category]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,10 +28,9 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! SwipeTableViewCell
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         let categoryItem = categoryArray[indexPath.row]
         cell.textLabel?.text = categoryItem.name
-        cell.delegate = self
         return cell
     }
     //MARK: TableView Delegate
@@ -78,22 +77,12 @@ class CategoryViewController: UITableViewController {
             print("Error with reading Data \(error)")
         }
     }
-}
-//MARK: Swipe cell Delegate m.
-extension CategoryViewController: SwipeTableViewCellDelegate{
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        
-        guard orientation == .right else { return nil }
-        
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            self.context.delete(self.categoryArray[indexPath.row])
-            self.categoryArray.remove(at: indexPath.row)
-            self.saveCategory()
-        }
-        
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
-        
-        return [deleteAction]
+    //Deletion from superClass
+    override func updateModel(indexPath: IndexPath) {
+        context.delete(categoryArray[indexPath.row])
+        categoryArray.remove(at: indexPath.row)
+        saveCategory()
     }
 }
+
+
