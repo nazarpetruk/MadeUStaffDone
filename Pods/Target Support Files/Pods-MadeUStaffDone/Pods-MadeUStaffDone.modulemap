@@ -1,0 +1,6 @@
+module Pods_MadeUStaffDone {
+  umbrella header "Pods-MadeUStaffDone-umbrella.h"
+
+  export *
+  module * { export * }
+}
